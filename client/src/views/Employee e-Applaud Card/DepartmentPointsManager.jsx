@@ -274,38 +274,11 @@ export default function DepartmentPointsManager() {
             </Grid>
         </Grid>
 
-        {/* Right Side: Decorative Badge */}
-        <Grid item xs={12} sm={4} sx={{ textAlign: "right" }}>
-            <Box
-                        sx={{
-                            bgcolor: "#1a73e8",
-                            color: "#fff",
-                            p: 1.5,
-                            borderRadius: 2,
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "center"
-                        }}
-                    >
-                        <Leaderboard sx={{ fontSize: 32 }} />
-                    </Box>
-        </Grid>
+       
     </Grid>
 
     {/* Optional Background Circle Accent */}
-    <Box
-        sx={{
-            position: "absolute",
-            top: -30,
-            right: -30,
-            width: 140,
-            height: 140,
-            background: "radial-gradient(circle at center, #1a73e8 10%, transparent 60%)",
-            opacity: 0.08,
-            borderRadius: "50%",
-            display: { xs: "none", sm: "block" }
-        }}
-    />
+  
 </Box>
 
     {/* Cards Section */}

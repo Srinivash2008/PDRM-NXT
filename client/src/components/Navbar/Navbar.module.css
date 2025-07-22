@@ -1,0 +1,211 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #f5f8fc;
+  font-family: "Segoe UI", sans-serif;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  position: relative;
+  z-index: 1000; /* Ensure navbar is on top */
+}
+
+.navLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 130px;
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #005c8a;
+  display: flex;
+  align-items: center;
+}
+
+.navCenter {
+  background-color: #ebf2f8; /* Lighter background for the center menu */
+  border-radius: 10px;
+  padding: 0.5rem 1rem; /* Adjusted padding */
+  display: flex;
+  gap: 1.2rem; /* Adjusted gap */
+  position: relative;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05); /* Subtle inner shadow */
+}
+
+.navItem {
+  font-size: 0.95rem; /* Slightly smaller font for compactness */
+  color: #444; /* Darker grey for better contrast */
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+  padding: 0.4rem 0.8rem; /* Padding for click area */
+  border-radius: 10%; /* Pill shape */
+  white-space: nowrap; /* Prevent wrapping */
+  display: flex;
+  align-items: center;
+  gap: 4px; /* For items with icons/arrows */
+}
+
+.navItem:hover {
+  color: #005c8a; /* Primary blue on hover */
+  background-color: #e6f2fa; /* Light blue background on hover */
+  transform: translateY(-1px); /* Slight lift effect */
+}
+
+.navItem.active {
+  color: #005c8a;
+  font-weight: 600;
+  background-color: #d4e9f5; /* More prominent background for active item */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Slight shadow for active item */
+}
+
+.navItemWrapper {
+  position: relative;
+}
+
+/* Dropdown Menu Item Styling */
+.dropdownImage {
+  width: 100%;
+  max-width: 80px; /* Smaller image size for menu items */
+  height: auto;
+  border-radius: 8px; /* Slightly smaller border-radius */
+  margin-bottom: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease;
+}
+
+.dropdownMenuItem {
+  /* This targets Material-UI MenuItem directly */
+  width: 120px !important; /* Override MUI default if needed */
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  padding: 10px !important; /* Adjust padding */
+  gap: 5px !important;
+  border-radius: 8px; /* Rounded corners for each menu item */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.dropdownMenuItem:hover {
+  background-color: #e6f2fa !important; /* Hover effect for dropdown items */
+  transform: translateY(-1px);
+}
+
+.dropdownMenuItem span {
+  font-size: 0.85rem; /* Smaller text for dropdown items */
+  color: #333;
+  font-weight: 500;
+}
+
+
+.navRight {
+  display: flex;
+  align-items: center !important;
+  gap: 1rem;
+  width: 128px;
+}
+
+.buyNowBtn {
+  background-color: #005c8a;
+  color: white;
+  padding: 0.6rem 1.2rem; /* Adjusted padding */
+  border-radius: 9999px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 92, 138, 0.2); /* Soft shadow */
+}
+
+.buyNowBtn:hover {
+  background-color: #00446b;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(0, 92, 138, 0.3);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile responsiveness */
+.mobileMenuBtn {
+  display: none; /* Hidden by default on desktop */
+  margin-left: auto; /* Push to the right */
+}
+
+/* Mobile Drawer Specific Styles */
+.mobileDrawerList {
+    width: 250px;
+    padding-top: 1rem; /* Space from top */
+}
+
+.mobileDrawerHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1rem;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 1rem;
+}
+.mobileDrawerHeader .logo {
+    font-size: 1.1rem;
+}
+
+.mobileDrawerList .MuiListItem-root {
+    padding: 0.8rem 1.5rem;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+
+.mobileDrawerList .MuiListItem-root:hover {
+    background-color: #f0f8ff;
+    color: #005c8a;
+}
+
+.mobileDrawerList .MuiListItem-root.active {
+    background-color: #e6f2fa;
+    color: #005c8a;
+    font-weight: 600;
+}
+
+.mobileDrawerList .MuiListItem-root.active .MuiListItemText-primary {
+    font-weight: 600;
+}
+
+.mobileDrawerActions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding: 0 1.5rem;
+}
+
+/* Media Query for Mobile */
+@media (max-width: 900px) {
+  .navCenter,
+  .navRight {
+    display: none; /* Hide desktop menu and buttons on mobile */
+  }
+
+  .mobileMenuBtn {
+    display: block; /* Show hamburger button on mobile */
+  }
+
+  .navbar {
+    padding: 0.8rem 1rem; /* Smaller padding on mobile */
+  }
+
+  .logo {
+    font-size: 1.1rem; /* Smaller logo on mobile */
+  }
+}
